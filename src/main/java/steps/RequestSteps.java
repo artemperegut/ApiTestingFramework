@@ -11,6 +11,6 @@ public class RequestSteps {
 
     @Тогда("пользователь делает GET запрос в \"(.*?)\" и выводит ответ в консоль")
     public void doRequest(String path) {
-        request.doGetAndReturnResponse(path, "application/json");
+        System.out.println(request.doGetAndReturnResponse(path, "application/json"));
     }
 }

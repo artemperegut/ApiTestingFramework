@@ -12,6 +12,6 @@ public class CommonSteps {
 
     @Before
     public void startUp() {
-        request = new Request("https://httpbin.org");
+        request = new Request("http://httpbin.org");
     }
 }
