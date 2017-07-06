@@ -1,3 +1,4 @@
+import com.sun.org.apache.regexp.internal.RE;
 import io.restassured.RestAssured;
 import io.restassured.config.DecoderConfig;
 import io.restassured.config.EncoderConfig;
@@ -14,9 +15,16 @@ public class Request {
 
     String baseURI; //адрес, по которому будет послан запрос
     int port; //порт адреса, по которому будет послан запрос
-    String decoderCharSet = "UTF-8";
-    String encoderCharSet = "UTF-8";
+    String decoderCharSet;
+    String encoderCharSet;
     SessionFilter sessionFilter = new SessionFilter();
+    public static Request request;
+
+    public Request() {
+        decoderCharSet = "UTF-8";
+        encoderCharSet = "UTF-8";
+        request = new Request();
+    }
 
     public RequestSpecification preparedRequest(String contentType) {
         RestAssured.baseURI = baseURI;
