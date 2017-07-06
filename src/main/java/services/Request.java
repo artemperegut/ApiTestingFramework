@@ -19,12 +19,12 @@ public class Request {
     String decoderCharSet;
     String encoderCharSet;
     SessionFilter sessionFilter = new SessionFilter();
-    public static Request request;
 
-    public Request() {
+    public Request(String uri) {
         decoderCharSet = "UTF-8";
         encoderCharSet = "UTF-8";
-        request = new Request();
+        baseURI = uri;
+        port = 80;
     }
 
     public RequestSpecification preparedRequest(String contentType) {
