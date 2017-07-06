@@ -9,7 +9,6 @@ import services.Request;
 public class CommonSteps {
     public static Request request;
 
-
     @Before
     public void startUp() {
         request = new Request("http://httpbin.org");
