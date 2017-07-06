@@ -1,4 +1,5 @@
-import com.sun.org.apache.regexp.internal.RE;
+package services;
+
 import io.restassured.RestAssured;
 import io.restassured.config.DecoderConfig;
 import io.restassured.config.EncoderConfig;
@@ -42,8 +43,18 @@ public class Request {
         Response response = preparedRequest(contentType).
                 body(body).
                 filter(sessionFilter).
-                then().
+                when().
                 post(path);
+        return response.andReturn().body().asString();
+    }
+
+    public String doGetAndReturnResponse(String path, String contentType) {
+        RestAssured.baseURI = baseURI;
+        RestAssured.port = port;
+        Response response = preparedRequest(contentType).
+                filter(sessionFilter).
+                when().
+                get(path);
         return response.andReturn().body().asString();
     }
 }
