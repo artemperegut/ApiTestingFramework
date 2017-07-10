@@ -10,7 +10,12 @@ import static steps.CommonSteps.request;
 public class RequestSteps {
 
     @Тогда("пользователь делает GET запрос в \"(.*?)\" и выводит ответ в консоль")
-    public void doRequest(String path) {
+    public void doGetRequest(String path) {
         System.out.println(request.doGetAndReturnResponse(path, "application/json"));
+    }
+
+    @Тогда("пользователь делает POST запрос \"(.*?)\" в \"(.*?)\" и выводит ответ в консоль")
+    public void doPostRequest(String post, String path) {
+        System.out.println(request.doPostAndReturnResponse(path, "application/json", post));
     }
 }
