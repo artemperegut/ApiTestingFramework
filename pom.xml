@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>Testing</groupId>
-    <artifactId>API</artifactId>
+    <artifactId>ApiTestingFramework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -82,6 +82,14 @@
                         <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <configuration>
+                    <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>
