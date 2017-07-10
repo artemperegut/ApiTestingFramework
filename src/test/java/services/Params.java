@@ -2,7 +2,6 @@ package services;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +35,7 @@ public class Params {
     }
 
     public static String inspect(String value) {
-        String replaced = replace(value)
+        String replaced = replace(value);
         for (Map.Entry<String, String> entry : parameters.entrySet()) {
             if (replaced.contains(entry.getKey())) {
                 replaced = replaced.replace(entry.getKey(), entry.getValue());
