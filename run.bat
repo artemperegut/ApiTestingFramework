@@ -1,1 +1,1 @@
-mvn clean install -Dtest="%1" site
+mvn clean install -Dtest="%1" allure:report
