@@ -13,6 +13,7 @@ import java.util.Properties;
 public class CommonSteps {
     public static Request request;
     public static Properties prop;
+    public static String lastResponseBody;
 
     @Before
     public void startUp() throws IOException {

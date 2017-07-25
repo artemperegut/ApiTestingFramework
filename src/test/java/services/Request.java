@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
+import static steps.CommonSteps.lastResponseBody;
 
 /**
  * Created by Artem Peregut on 06.07.2017.
@@ -45,7 +46,8 @@ public class Request {
                 filter(sessionFilter).
                 when().
                 post(path);
-        return response.andReturn().body().asString();
+        lastResponseBody = response.andReturn().body().asString();
+        return lastResponseBody;
     }
 
     public String doGetAndReturnResponse(String path, String contentType) {
@@ -55,6 +57,7 @@ public class Request {
                 filter(sessionFilter).
                 when().
                 get(path);
-        return response.andReturn().body().asString();
+        lastResponseBody = response.andReturn().body().asString();
+        return lastResponseBody;
     }
 }
