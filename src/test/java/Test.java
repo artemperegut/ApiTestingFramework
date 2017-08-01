@@ -1,5 +1,3 @@
-package tests;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
@@ -9,6 +7,10 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(glue = "steps", features = "src/test/resources/tests")
+@CucumberOptions(
+        glue = "steps",
+//        tags = "test1",
+        features = "src/test/resources/tests"
+)
 public class Test {
 }

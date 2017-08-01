@@ -1,1 +1,1 @@
-mvn clean install -Dtest="%1" allure:report
+mvn clean install -DTAGS="%1" allure:report

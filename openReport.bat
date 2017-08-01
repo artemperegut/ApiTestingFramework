@@ -1,1 +1,1 @@
-start "" "http://localhost:63342/ApiTestingFramework/target/site/allure-maven-plugin/index.html"
+start "" "http://localhost:57655/ApiTestingFramework/target/site/allure-maven-plugin/index.html"
