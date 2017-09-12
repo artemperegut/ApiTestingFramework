@@ -2,6 +2,7 @@ package steps;
 
 import cucumber.api.java.ru.Тогда;
 
+import static steps.CommonSteps.log;
 import static steps.CommonSteps.request;
 
 /**
@@ -9,13 +10,15 @@ import static steps.CommonSteps.request;
  */
 public class RequestSteps {
 
-    @Тогда("пользователь делает GET запрос в \"(.*?)\" и выводит ответ в консоль")
+    @Тогда("пользователь делает GET запрос по адресу \"(.*?)\"")
     public void doGetRequest(String path) {
-        System.out.println(request.doGetAndReturnResponse(path, "application/json"));
+        log.info("пользователь делает GET запрос по адресу " + path);
+        log.info("Ответ: \n" + request.doGetAndReturnResponse(path, "application/json"));
     }
 
-    @Тогда("пользователь делает POST запрос \"(.*?)\" в \"(.*?)\" и выводит ответ в консоль")
+    @Тогда("пользователь делает POST запрос с телом \"(.*?)\" по адресу \"(.*?)\"")
     public void doPostRequest(String post, String path) {
-        System.out.println(request.doPostAndReturnResponse(path, "application/json", post));
+        log.info("пользователь делает POST запрос с телом " + post + " по адресу " + path);
+        log.info("Ответ: \n" + request.doPostAndReturnResponse(path, "application/json", post));
     }
 }
